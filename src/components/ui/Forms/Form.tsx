@@ -21,18 +21,20 @@ const Form = ({
 }: FormProps) => {
   const formConfig: FormConfig = {};
 
-  if (!!defaultValues) formConfig["defaultValues"] = defaultValues;
-  if (!!resolver) formConfig["resolver"] = resolver;
-  const methods = useForm<FormProps>(formConfig);
+  if (defaultValues) formConfig["defaultValues"] = defaultValues;
+  if (resolver) formConfig["resolver"] = resolver;
+  const methods = useForm(formConfig);
 
   const { handleSubmit, reset } = methods;
 
-  const onSubmit = (data: any) => {
-    submitHandler(data);
-    reset();
+  const onSubmit = async (data: any) => {
+    await submitHandler(data);
+    reset(); 
   };
 
-  useEffect(() => reset(defaultValues), [defaultValues, reset, methods]);
+  useEffect(() => {
+    reset(defaultValues);
+  }, [defaultValues, reset]);
 
   return (
     <FormProvider {...methods}>

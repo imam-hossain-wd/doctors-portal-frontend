@@ -22,3 +22,13 @@ export interface IMeta {
   
 
   
+  export type SignupProps = {
+    name?: string;
+    email?: string;
+    phone?: string;
+    password?: string;
+  };
+  export type LoginProps = {
+    email?: string;
+    password?: string;
+  };
