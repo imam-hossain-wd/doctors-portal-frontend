@@ -34,7 +34,7 @@ const LoginPage = () => {
     };
 
     return (
-        <div className="w-[40%] shadow mx-auto mt-20 border border-gray-200 p-5 rounded ">
+        <div className="w-[90%] lg:w-[40%] shadow mx-auto mt-20 border border-gray-200 p-5 rounded ">
       <h1 className="text-center text-2xl font-semibold">Log in</h1>
 
       <Form submitHandler={onSubmit}>
